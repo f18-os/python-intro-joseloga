@@ -39,14 +39,7 @@ def collectWords():
 def editWord(word ):
     
     word = word.lower()
-    word = word.replace('"', '')
-    word = word.replace(' ', '')
-    word = word.replace('', '')
-    word = word.replace(',', '')
-    word = word.replace('.', '')
-    word = word.replace(';', '')
-    word = word.replace(':', '')
- 
+    word = re.sub("[.,:; \"]", '', word)
     return word
 
 
