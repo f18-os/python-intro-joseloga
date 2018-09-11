@@ -19,7 +19,7 @@ def collectWords():
         print ("text file input %s doesn't exist! Exiting" % textFname)
         exit()
     
-    print("reading File....")
+#    print("reading File....")
     if readFile.mode == "r":
         asList = re.sub('\W+', ' ',readFile.read()).split()
         readFile.close()
@@ -79,10 +79,10 @@ def writeToFile(dictionary):
 
 #print list
 def printList(dictionary):
-    for item in dictionary:
-        print(item, sep="\n")
-    #    for key, value in dictionary.items():
-#        print(key,value)
+#    for item in dictionary:
+#        print(item, sep="\n")
+    for key, value in dictionary.items():
+        print(key,value)
 
 
 
@@ -90,6 +90,7 @@ def main():
     wordList =  collectWords();
 #    printList(wordList);
     dictionary = countWords(wordList)
+#    printList(dictionary);
     writeToFile(dictionary)
     
     
